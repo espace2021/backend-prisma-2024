@@ -16,7 +16,7 @@ router.post('/', async (req, res, )=> {
     
         res.json(categorie)
       } catch (error) {
-        res.status(500).json({
+        res.status(500).json({ error : error,
           message: "Something went wrong",
         })
       }
@@ -30,7 +30,7 @@ router.get('/', async (req, res, )=> {
         const categories = await prisma.categories.findMany()
          res.json(categories)
         } catch (error) {
-         res.status(500).json({
+         res.status(500).json({ 
         message: "Something went wrong",
        })
        }
