@@ -7,6 +7,11 @@ const app = express()
 app.use(express.json());
 app.use(cors())
 
+// requête    
+app.get("/",(req,res)=>{
+    res.send("bonjour");
+    });
+
 // Appel de routes
 const categoriesRouter =require("./routes/categories.route")
 app.use('/api/categories', categoriesRouter);
